@@ -19,7 +19,7 @@ class VehicleDetector:
         vehicles_boxes = []
         class_ids, scores, boxes = self.model.detect(img, nmsThreshold=0.4)
         for class_id, score, box in zip(class_ids, scores, boxes):
-            if score < 0.5:
+            if score < 0.1:
                 # Skip detection with low confidence
                 continue
 
